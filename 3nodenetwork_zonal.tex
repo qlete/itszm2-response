@@ -1,0 +1,21 @@
+%\documentclass[tikz]{standalone}
+%\usetikzlibrary{positioning}
+%
+%\begin{document}
+\begin{tikzpicture}
+	\tikzstyle{dot} = [draw, circle, minimum size=2mm, inner sep=0pt, outer sep=0pt, fill=gray, color=blue]
+	%\tikzstyle{every node}=[font=\small]
+	% place nodes
+	\node[dot, label={135:$n_1$}] (N1) {};
+	\node[dot, label={45:$n_2$}, above right=1.5cm and 3cm of N1] (N2) {};
+	\node[dot, label={315:$n_3$}, below of=N2, node distance=3cm] (N3) {};
+	% draw lines
+	\draw (N1) -- node[pos=0.65,above] {$l_{12}$} (N2);
+	\draw (N2) -- node[pos=0.5,right] {$l_{23}$} (N3);
+	\draw (N3) -- node[pos=0.35,below] {$l_{31}$} (N1);
+	% draw zone limits
+	\node[coordinate, above right=1.75cm and 1.25cm of N1] (zonelimstart) {};
+	\node[coordinate, below of=zonelimstart, node distance=3.5cm] (zonelimend) {};
+	\draw[dashed, orange, thick] (zonelimstart) -- (zonelimend) node[left,black] {A} node [right,black] {B};
+\end{tikzpicture}
+%\end{document}

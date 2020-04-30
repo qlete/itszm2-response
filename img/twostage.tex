@@ -1,0 +1,46 @@
+%\documentclass[tikz]{standalone}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{color}
+
+%\begin{document}
+\begin{tikzpicture}
+	\tikzstyle{process} = [rectangle, draw, node distance=10cm, text width=12em, text centered, rounded corners, minimum height=5em, fill=xkcdLightBlue]
+	\tikzstyle{myarrow} = [-{Latex[length=3mm]}]
+	\node [process] (DA) {\textbf{\textcolor{white}{Day-ahead electricity market with proactive switching}}};
+	\node [coordinate, below of=DA, node distance=2cm, label={below:
+		\begin{tabular}{c}
+			day-ahead cleared energy quantities \\
+			day-ahead cost 
+		\end{tabular}
+		}] (DAresult) {};
+	\node [process, right of=DA] (RT) {\textbf{\textcolor{white}{Real-time electricity market with reactive switching}}};
+	\node [coordinate, above of=RT, node distance=2cm, label={above:
+		\begin{tabular}{c}
+			transmission outages
+		\end{tabular}
+		}] (uncertainty) {};
+	\node [coordinate, below of=RT, node distance=2cm, label={below:
+		\begin{tabular}{c}
+			real-time cleared energy quantities \\
+			real-time topology \\
+			real-time redispatch and \\
+			congestion management cost
+		\end{tabular}
+		}] (RTresult) {};
+	\draw [myarrow] (DA) -- node[pos=0.5, above] {
+		\begin{tabular}{c}
+			day-ahead commitment 
+		\end{tabular}} 
+% 		node[pos=0.5, below] {
+% 		\begin{tabular}{c}
+% 			day-ahead net positions
+% 		\end{tabular}
+% 		} 
+		(RT);
+% 	\draw [myarrow] (forecast) -- (DA);
+	\draw [myarrow] (uncertainty) -- (RT);
+	\draw [myarrow] (DA) -- (DAresult);
+	\draw [myarrow] (RT) -- (RTresult);
+\end{tikzpicture}
+%\end{document}
