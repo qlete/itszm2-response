@@ -402,3 +402,37 @@ accordance with Article 20 of Commission Regulation (EU)
   abstract={This paper extends a recent analysis which investigated the impact of scarcity adders produced by operating reserve demand curves on the financial viability of generation units in the Belgian market. Our paper is inspired by practical considerations related to the implementation of the mechanism in European electricity markets. We are specifically interested in: (i) the extent to which the mechanism rewards flexible resources for being available 'when and where' needed, as required by European competition law; (ii) the sensitivity of the mechanism to certain parameters that require regulatory judgment; (iii) the interaction of the mechanism with indirect capacity mechanisms; and (iv) the ability of the mechanism to provide long-term investment signals. We find that the restoration of nuclear capacity in the Belgian market would suppress scarcity adders to near-zero values. We show that the increase in value of lost load would have a minor impact on scarcity adders when capacity shortages are negligible. We find that the removal of strategic reserve from the Belgian market would have a significant impact on scarcity adders. We find strong positive correlation in consecutive imbalance increments, and show that this correlation can result in noticeable impact on the computation of scarcity adders. We demonstrate that the back-propagation of scarcity adders is essential for providing a long-term investment signal to flexible resources.},
   url={https://ideas.repec.org/a/aen/eeepjl/eeep7-2-papavasiliou.html}
 }
+
+@Article{madani2015,
+  author={Madani, Mehdi and Van Vyve, Mathieu},
+  title={{Computationally efficient MIP formulation and algorithms for European day-ahead electricity market auctions}},
+  journal={European Journal of Operational Research},
+  year=2015,
+  volume={242},
+  number={2},
+  pages={580-593},
+  month={},
+  keywords={Integer programming; OR in energy; Auctions/bidding; Large scale optimization},
+  doi={10.1016/j.ejor.2014.09.06},
+  abstract={We consider the optimization problem implementing current market rules for European day-ahead electricity markets. We propose improved algorithmic approaches for that problem. First, a new MIP formulation is presented which avoids the use of complementarity constraints to express market equilibrium conditions, and also avoids the introduction of auxiliary continuous or binary variables. Instead, we rely on strong duality theory for linear or convex quadratic optimization problems to recover equilibrium constraints. When so-called stepwise bid curves are considered to describe continuous bids, the new formulation allows to take full advantage of state-of-the-art MILP solvers, and in most cases, an optimal solution including market prices can be computed for large-scale instances without any further algorithmic work. Second, the new formulation suggests a Benders-like decomposition procedure. This helps in the case of piecewise linear bid curves that yield quadratic primal and dual objective functions leading to a dense quadratic constraint in the formulation. This procedure essentially strengthens classical Benders cuts locally. Computational experiments using 2011 historical instances for the Central Western Europe region show excellent results. In the linear case, both approaches are very efficient, while for quadratic instances, only the decomposition procedure is appropriate. Finally, when most orders are block orders, and instances are combinatorially very hard, the direct MILP approach is substantially more efficient.},
+  url={https://ideas.repec.org/a/eee/ejores/v242y2015i2p580-593.html}
+}
+
+@article{Oneill2004,
+    abstract = {This paper addresses the existence of market clearing prices and the economic interpretation of strong duality for integer programs in the economic analysis of markets with nonconvexities (indivisibilities). Electric power markets in which nonconvexities arise from the operating characteristics of generators motivate our analysis; however, the results presented here are general and can be applied to other markets in which nonconvexities are important. We show that the optimal solution to a linear program that solves the mixed integer program has dual variables that: (1) have the traditional economic interpretation as prices; (2) explicitly price integral activities; and (3) clear the market in the presence of nonconvexities. We then show how this methodology can be used to interpret the solutions to nonconvex problems such as the problem discussed by Scarf [Journal of Economic Perspectives 8(4) (1994) 111].},
+    author = {O'neill, Richard P and Sotkiewicz, Paul M and Hobbs, Benjamin F and Rothkopf, Michael H and Stewart, William R},
+    doi = {10.1016/j.ejor.2003.12.011},
+    file = {:home/quentin/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/O{\~{o}}neill et al. - 2004 - Interfaces with Other Disciplines Efficient market-clearing prices in markets with nonconvexities.pdf:pdf},
+    keywords = {Economics,Equilibrium pricing,MIP applications,MIP models of markets},
+    title = {{Efficient market-clearing prices in markets with nonconvexities}},
+    url = {www.elsevier.com/locate/dsw},
+    year = {2004}
+}
+
+@techreport{Gribik2007,
+    author = {Gribik, Paul R and Hogan, William W and Pope, Susan L},
+    file = {:home/quentin/.local/share/data/Mendeley Ltd./Mendeley Desktop/Downloaded/Gribik, Hogan, Pope - 2007 - Market-Clearing Electricity Prices and Energy Uplift.pdf:pdf},
+    title = {{Market-Clearing Electricity Prices and Energy Uplift}},
+    url = {http://ksghome.harvard.edu/{~}WHogan/minuplift{\_}031903.pdf},
+    year = {2007}
+}
