@@ -30,44 +30,49 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
 
 \begin{enumerate}
     \item The paper appears to contradict itself on whether the day-ahead model includes unit commitment or not.
+    \resp{
+    The model includes unit commitment. We provide a detailed discussion about the role of unit commitment in our paper in our response letter to the first part of the paper.
+}
     \item Do the theoretical results of Part I hold if unit commitment is included in the day-ahead model?
 \end{enumerate}
 
 \resp{
     Our zonal day-ahead model includes unit commitment. 
-    The reviewer is referred to the response letter to Part I for the details on how we changed the motivation of the paper to avoid the confusion as well as the precision that we added. 
+    The reviewer is referred to the response letter of Part I for a detailed discussion on how we changed the motivation of the paper in order to avoid any ambiguity about whether our paper includes unit commitment. \textcolor{green}{It could be worth being a bit more explicit in the literature review, see the paragraph that I added regarding kory's work}%as well as the precision that we added. 
 }
 
 \begin{enumerate}
     \setcounter{enumi}{2}
-    \item The authors do not clearly describe how prices are generated in their "zonal day-ahead model."
+    \item The authors do not clearly describe how prices are generated in their ``zonal day-ahead model."
 \end{enumerate}
 
 \resp{
     The goal of our paper is to quantify the inefficiencies of the European zonal design with respect to unit commitment and to measure the impact of switching on reducing these inefficiencies. 
-    In order to measure these inefficiencies, the important output of the day-ahead model is the unit commitment decision and our model does not produce prices explicitly. 
+    In order to measure these inefficiencies, the relevant output of the day-ahead model is the unit commitment decision and our model does not produce prices explicitly. 
     The assumption that is made in our model is that units are committed while maximizing the total welfare. 
     This is the result that is obtained with usual pricing mechanisms like IP pricing \cite{Oneill2004} and convex hull pricing \cite{Gribik2007}. 
     
     The question of the most appropriate pricing mechanism is an ongoing debate among European stakeholders.
-    Traditionally, the European pricing rules have forbidden the recourse to uplift payments, at the cost of a potential loss in welfare.
-    However, these rules are being reconsidered and the market is expected to evolve towards a full welfare maximization approach. 
-    We do not address these questions in details in our paper and, instead, assume that units are committed under welfare maximization. 
-    This approach leads to a best-case investigation of zonal pricing and enables us to focus on the inefficiencies in unit commitment brought in by simplified transmission constraints. 
+    Traditionally, the European pricing rules have forbidden the recourse to uplift payments, at the cost of a potential loss in welfare \textcolor{green}{cite Madani}.
+    However, these rules are being reconsidered and there is an ongoing discussion with Nominated European Market Operators (NEMOs) about the consideration of so-called non-uniform pricing rules (i.e. welfare maximization supported by side payments) \textcolor{green}{cite epri presentation on my web site}.
+    %the market is expected to evolve towards a full welfare maximization approach. 
+    We do not address the question of the most appropriate pricing mechanism in the presence of non-convexities in our paper and, instead, assume that units are committed under welfare maximization. 
+    This approach leads to a best-case investigation of zonal pricing and enables us to focus on the inefficiencies in unit commitment that result from the simplified representation of transmission constraints in a zonal day-ahead model. 
     
     Finally, we note that our model could in theory be extended to compute prices under the different pricing mechanisms. 
-    In the case of IP pricing, the procedure would be simply to fix the switching and commitment variables to obtain a linear problem. 
-    The dual variable of the zonal balance constraint gives the zonal price. 
+    In the case of IP pricing, the procedure would be simply to fix the switching and commitment variables in order to obtain a linear problem. 
+    The dual variable of the zonal balance constraint produces the zonal price. 
     In the case of convex hull pricing, the methodology would be to fix the switching variables to their optimal value and obtain the zonal prices as the optimal values of the Lagrangian dual variables of the zonal balance constraint.
-    In the case of the current European pricing rules that require strict linear prices, the prices could be obtained by again fixing the switching variables and follow the approach presented in \cite{madani2015} to reformulate the equilibrium problem as a Mixed Integer Problem.
-    A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.
+    In the case of the current European pricing rules that require strict linear prices, the prices could be obtained by again fixing the switching variables and following the approach presented in \cite{madani2015} in order to reformulate the equilibrium problem as a Mixed Integer Problem.
+    A full analysis of the implications of our zonal day-ahead model on pricing is, however, outside the scope of the paper, and is the subject of follow-up research. \textcolor{green}{can you still show how it works in a simple example? we want to walk away with a message that 'we know how to do this, but this is not the focus of the present paper'}
     
-    In this regard, the footnote n$^\circ$4 on page 3 of our previous submission was probably misleading by suggesting that our model computes prices explicitly. 
-    Following the comment of the reviewer, we have modified this footnote. 
-    We repeat this modification here for convenience. 
+    Inspired by the comment of the reviewer, we have modified footnote n$^\circ$4 on page 3 of our original submission. % was probably misleading by suggesting that our model computes prices explicitly. 
+    %Following the comment of the reviewer, we have modified this footnote. 
+    We repeat this modification here for the convenient reference of the reviewer. 
     \begin{quotation}
         {\it
-            We assume that the commitment is determined along with the topology \textcolor{red}{by welfare maximization. Our model does not compute prices explicitly but supporting prices could be computed after the binary decisions have been fixed, as in US markets. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
+            We assume that the commitment is determined along with the topology \textcolor{red}{with the objective of maximizing welfare. %Our model does not compute prices explicitly but supporting 
+            Prices can be computed after the binary decisions have been fixed \textcolor{green}{cite hogan pjm paper on uplifts}. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
         }
     \end{quotation}
 }
