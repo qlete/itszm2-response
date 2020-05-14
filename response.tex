@@ -12,6 +12,11 @@
 % short title -- to be shown at the top right of every page
 \rhead{}
 
+\newcommand{\anthony}[1]{{\leavevmode\color{xkcdOrange}{#1}}}
+\newcommand{\quentin}[1]{{\leavevmode\color{xkcdGreen}{#1}}}
+% \newcommand{\anthony}[1]{#1}
+% \newcommand{\quentin}[1]{#1}
+
 \begin{document}
 \maketitle
 
@@ -30,15 +35,20 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
 
 \begin{enumerate}
     \item The paper appears to contradict itself on whether the day-ahead model includes unit commitment or not.
-    \resp{
+\end{enumerate}
+
+\resp{
     The model includes unit commitment. We provide a detailed discussion about the role of unit commitment in our paper in our response letter to the first part of the paper.
 }
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
     \item Do the theoretical results of Part I hold if unit commitment is included in the day-ahead model?
 \end{enumerate}
 
 \resp{
     Our zonal day-ahead model includes unit commitment. 
-    The reviewer is referred to the response letter of Part I for a detailed discussion on how we changed the motivation of the paper in order to avoid any ambiguity about whether our paper includes unit commitment. \textcolor{green}{It could be worth being a bit more explicit in the literature review, see the paragraph that I added regarding kory's work}%as well as the precision that we added. 
+    The reviewer is referred to the response letter of Part I for a detailed discussion on how we changed the motivation of the paper in order to avoid any ambiguity about whether our paper includes unit commitment.
 }
 
 \begin{enumerate}
@@ -53,8 +63,8 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
     This is the result that is obtained with usual pricing mechanisms like IP pricing \cite{Oneill2004} and convex hull pricing \cite{Gribik2007}. 
     
     The question of the most appropriate pricing mechanism is an ongoing debate among European stakeholders.
-    Traditionally, the European pricing rules have forbidden the recourse to uplift payments, at the cost of a potential loss in welfare \textcolor{green}{cite Madani}.
-    However, these rules are being reconsidered and there is an ongoing discussion with Nominated European Market Operators (NEMOs) about the consideration of so-called non-uniform pricing rules (i.e. welfare maximization supported by side payments) \textcolor{green}{cite epri presentation on my web site}.
+    Traditionally, the European pricing rules have forbidden the recourse to uplift payments, at the cost of a potential loss in welfare \cite{MadaniThesis}.
+    However, these rules are being reconsidered and there is an ongoing discussion with Nominated European Market Operators (NEMOs) about the consideration of so-called non-uniform pricing rules (i.e. welfare maximization supported by side payments) \cite{Epri_pres}.
     %the market is expected to evolve towards a full welfare maximization approach. 
     We do not address the question of the most appropriate pricing mechanism in the presence of non-convexities in our paper and, instead, assume that units are committed under welfare maximization. 
     This approach leads to a best-case investigation of zonal pricing and enables us to focus on the inefficiencies in unit commitment that result from the simplified representation of transmission constraints in a zonal day-ahead model. 
@@ -64,17 +74,48 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
     The dual variable of the zonal balance constraint produces the zonal price. 
     In the case of convex hull pricing, the methodology would be to fix the switching variables to their optimal value and obtain the zonal prices as the optimal values of the Lagrangian dual variables of the zonal balance constraint.
     In the case of the current European pricing rules that require strict linear prices, the prices could be obtained by again fixing the switching variables and following the approach presented in \cite{madani2015} in order to reformulate the equilibrium problem as a Mixed Integer Problem.
-    A full analysis of the implications of our zonal day-ahead model on pricing is, however, outside the scope of the paper, and is the subject of follow-up research. \textcolor{green}{can you still show how it works in a simple example? we want to walk away with a message that 'we know how to do this, but this is not the focus of the present paper'}
+    A full analysis of the implications of our zonal day-ahead model on pricing is, however, outside the scope of the paper, and is the subject of follow-up research. 
+    
+    \quentin{Let us now illustrate on a small three-node two-zone example how the prices could be determined. 
+    We use a similar instance as the one used in the response letter to part 1 with some slight changes in the data. 
+    The instance with the data, inspired by the small example presented in \cite{Schiro2015}, is shown in Fig. \ref{fig:triangle}. 
+    \begin{figure}
+        \centering
+        \include{triangle}
+        \caption{Three-node two-zone example for illustrating the different pricing mechanism.}
+        \label{fig:triangle}
+    \end{figure}
+    In order to determine prices, the optimal switching decision will first be obtained by maximizing welfare. 
+    Then, prices will be computed following the rules of each method with the fixed topology. 
+    \begin{table}[H]
+        \color{blue}
+        \centering
+        \begin{tabular}{c|c|c|c|c}
+             Load level (D) & Lines switched & IP price & Convex hull price & EU-style price\footnotemark \\
+             $\text{[MW]}$ & off &  [$\text{\euro}$/MWh] &  [$\text{\euro}$/MWh] &  [$\text{\euro}$/MWh] \\
+             \hline
+             300 & $\emptyset$ & 20 & 20 & 20 \\ 
+             450 & $\emptyset$ & 60 & 36 & 60 \\
+             550 & line 2-3 & 20 & 36 & 60 \\
+             700 & line 2-3 & 60 & 60 & 60 \\
+        \end{tabular}
+        \caption{Switching decision and price in the different pricing mechanisms.}
+        \label{tab:my_label}
+    \end{table}}
+    
+    \footnotetext{{\color{blue}Note that the EU-style price leads to a different dispatch than IP and CHP pricing at a load level of 550MW, which translates in a loss of welfare. Generator $G_2$ is in that case not committed and is 'paradoxically rejected', which is allowed according to EU rules. No side payments are required.}}
     
     Inspired by the comment of the reviewer, we have modified footnote n$^\circ$4 on page 3 of our original submission. % was probably misleading by suggesting that our model computes prices explicitly. 
     %Following the comment of the reviewer, we have modified this footnote. 
     We repeat this modification here for the convenient reference of the reviewer. 
     \begin{quotation}
         {\it
-            We assume that the commitment is determined along with the topology \textcolor{red}{with the objective of maximizing welfare. %Our model does not compute prices explicitly but supporting 
-            Prices can be computed after the binary decisions have been fixed \textcolor{green}{cite hogan pjm paper on uplifts}. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
+            We assume that the commitment is determined along with the topology \textcolor{red}{with the objective of maximizing welfare.
+            Prices can be computed after the binary decisions have been fixed \cite{PJM}. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
         }
     \end{quotation}
+    
+    \quentin{!!! Is \cite{PJM} the right citation to make here ?}
 }
 
 \section{Reviewer \#2:}

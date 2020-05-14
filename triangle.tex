@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=7]
+	\draw [thick] (0, 0.1) circle [radius=0.05];
+	\draw [thick] (1, 0.5) circle [radius=0.05];
+	\draw [thick] (0, 0.9) circle [radius=0.05];
+	\node at (0, 0.1) {3};
+	\node at(1, 0.5) {2};
+	\node at (0, 0.9) {1};
+    \draw [thick] (0.05, 0.9) -- (0.95, 0.5);
+    \draw [thick] (0.05, 0.1) -- (0.95, 0.5);
+	\draw [thick] (0, 0.15) -- (0, 0.85);
+    % \node [right] at (-0.2, 0.5) {$50\si{\mega\watt}$};
+    % \node [right] at (0.32, 0.85) {$200 \si{\mega\watt}$};
+
+	\draw [->] (1, 0.65) -- (1, 0.55);
+	\node [above, align=center] at (1, 0.65) {$G_1:(400\si{\mega\watt},20\text{\euro}/\si{\mega\watt\hour}$, \\ $\text{FAST})$ \\ $G_2:(250\si{\mega\watt},36\text{\euro}/\si{\mega\watt\hour}$, \\ $\text{SLOW})$};
+	
+% 	\draw [->] (1, 0.45) -- (1, 0.35);
+% 	\node [below, align=center] at (1, 0.35) {$G_2:(100\si{\mega\watt},20\text{\euro}/\si{\mega\watt\hour}$, \\ $\text{SLOW})$}
+
+	\draw [->] (0, 0.95) -- (0, 1.05);
+	\node [above] at (0, 1.05) {$G_3:(200\si{\mega\watt}$, \\ $60\text{\euro}/\si{\mega\watt\hour}, \text{FAST})$};
+
+%     \draw (-0.05, 0.9) -- (-0.15, 0.9);
+%     \draw [->] (-0.15, 0.9) -- (-0.15, 0.8);
+% 	\node [below] at (-0.15, 0.8) {$C:200\si{\mega\watt}$};
+
+    \draw [->] (0, 0.05) -- (0, -0.05);
+    \node [below] at (0, -0.05) {D};
+    
+    % \draw [->] (-0.15, 0.1) -- (-0.05, 0.1);
+    % \draw (-0.15, 0.1) -- (-0.15, 0.2);
+    % \node [above, align=center] at (-0.25, 0.2) {$G_3:(200\si{\mega\watt}$, \\ $60\text{\euro}/\si{\mega\watt\hour}$, FAST)};
+
+	\node [above] at (0.5, 0.15) {$300 \si{\mega\watt}$};
+	\node [below] at (0.5, 0) {A};
+	\node [below] at (0.9, 0) {B};
+	\draw [dashed, color=orange] (0.67, 0) -- (0.67, 1);
+\end{tikzpicture}
