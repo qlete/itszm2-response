@@ -13,9 +13,9 @@
 \rhead{}
 
 \newcommand{\anthony}[1]{{\leavevmode\color{xkcdOrange}{#1}}}
-\newcommand{\quentin}[1]{{\leavevmode\color{xkcdGreen}{#1}}}
+% \newcommand{\quentin}[1]{{\leavevmode\color{xkcdGreen}{#1}}}
 % \newcommand{\anthony}[1]{#1}
-% \newcommand{\quentin}[1]{#1}
+\newcommand{\quentin}[1]{#1}
 
 \begin{document}
 \maketitle
@@ -78,7 +78,7 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
     
     \quentin{Let us now illustrate on a small three-node two-zone example how the prices could be determined. 
     We use a similar instance as the one used in the response letter to part 1 with some slight changes in the data. 
-    The instance with the data, inspired by the small example presented in \cite{Schiro2015}, is shown in Fig. \ref{fig:triangle}. 
+    The instance with the data, inspired by the small example presented in \cite{Schiro2015}, is presented in Fig. \ref{fig:triangle}. 
     \begin{figure}
         \centering
         \include{triangle}
@@ -86,7 +86,7 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
         \label{fig:triangle}
     \end{figure}
     In order to determine prices, the optimal switching decision will first be obtained by maximizing welfare. 
-    Then, prices will be computed following the rules of each method with the fixed topology. 
+    Then, prices will be computed following the rules of each method with the fixed topology. The resulting prices for the different pricing methods discussed above are presented in table \ref{tab:my_label}.
     \begin{table}[H]
         \color{blue}
         \centering
@@ -103,7 +103,7 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
         \label{tab:my_label}
     \end{table}}
     
-    \footnotetext{{\color{blue}Note that the EU-style price leads to a different dispatch than IP and CHP pricing at a load level of 550MW, which translates in a loss of welfare. Generator $G_2$ is in that case not committed and is 'paradoxically rejected', which is allowed according to EU rules. No side payments are required.}}
+    \footnotetext{{\color{blue}Note that the EU-style price leads to a different dispatch than IP and CHP pricing at a load level of 550MW, which translates to a loss of welfare. Generator $G_2$ is in that case not committed and is 'paradoxically rejected', which is allowed according to EU pricing rules. No side payments are required.}}
     
     Inspired by the comment of the reviewer, we have modified footnote n$^\circ$4 on page 3 of our original submission. % was probably misleading by suggesting that our model computes prices explicitly. 
     %Following the comment of the reviewer, we have modified this footnote. 
@@ -111,11 +111,9 @@ My comments from Part II echo my concerns from Part I. They are only briefly des
     \begin{quotation}
         {\it
             We assume that the commitment is determined along with the topology \textcolor{red}{with the objective of maximizing welfare.
-            Prices can be computed after the binary decisions have been fixed \cite{PJM}. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
+            Prices can be computed after the binary decisions have been fixed \cite{ONeill2010}. A full analysis of the implications of our zonal day-ahead model on pricing is however outside the scope of the paper, and is the subject of follow-up research.}
         }
     \end{quotation}
-    
-    \quentin{!!! Is \cite{PJM} the right citation to make here ?}
 }
 
 \section{Reviewer \#2:}
